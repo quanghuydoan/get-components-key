@@ -1,0 +1,41 @@
+
+
+
+// async function fillLocalImage(frame, imageURL){
+//     const imageHash = await figma.createImage(imageURL);
+//     const imageNode = figma.createImage();
+//     imageNode.imageRef = imageHash
+// }
+async function importNode(){
+  let importComponent = await figma.importComponentByKeyAsync("cd8cc5a4e8a95525f905016a7a4d0945c86d8c12");
+  importComponent.createInstance();
+}
+importNode();
+console.log(importNode());
+
+
+
+
+
+
+
+figma.showUI(__html__, { title: 'Banner Ads Generator', height: 504, width: 336 });
+figma.ui.onmessage = msg => {
+    if (msg.type === 'create-banner-ad') {
+       
+        
+
+        // const array = [];
+        // const nodes = msg.selectedOptions;
+        // for (let i = 0; i < nodes.length; i++) {
+        //     const nodeKey = nodes[i];
+        //     const instanceNode = importNode(nodeKey);
+        //     //instanceNode.x = i * 150;
+        //     //figma.currentPage.appendChild(instanceNode);
+        //     array.push(instanceNode);
+        // }
+        // figma.currentPage.selection = nodes;
+        // figma.viewport.scrollAndZoomIntoView(nodes);
+
+    }
+};
