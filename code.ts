@@ -17,8 +17,19 @@ figma.ui.onmessage = async msg => {
     const nodes: SceneNode[] = [];
     for (let i = 0; i < msg.selectedOptions.length; i++) {
       const nodeKey = msg.selectedOptions[i];
-      const instanceNode = await importNode(nodeKey);
-      console.log(instanceNode);
+      // const instanceNode = await importNode(nodeKey);
+      async function getInstanceNode (nodekk: string): Promise<FrameNode> {
+        const value = await importNode(nodekk);
+        console.log(value);
+      }
+      getInstanceNode(nodeKey)
+        .then((frame: FrameNode) => {
+          console.log(frame.x);
+          console.log(frame.width);
+        })
+        .catch ((error) => {
+          console.error
+        })
     }
   }
   // await figma.closePlugin();
