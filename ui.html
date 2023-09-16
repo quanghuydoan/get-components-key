@@ -697,7 +697,7 @@
     </div>
     <div class="tabs">
       <label for="logo" class="title">Input Logo:</label>
-      <input type="file" id="logo" name="logo"><br><br>
+      <input type="file" id="image-upload">
     </div>
     <div class="tabs title2">
       <input type="button" value="Create Ad" id="create-ad">
@@ -739,11 +739,7 @@
   }
   //Handle the submit button
   document.getElementById('create-ad').onclick = () => {
-    //handle the uploaded logo
-    // const logoInput = document.getElementById('logo');
-    // logoInput.addEventListener('change', () => {
-    //   const selectedFile = logoInput.files[0];
-    // })
+
     //Handle the extracted data from textbox
     // const headlineValue = document.getElementById('headline').value;
     // const descriptionValue = document.getElementById('description').value;
@@ -758,6 +754,26 @@
         selectedOptions.push(checkbox.value)
       }
     })
+
+
+    //handle the uploaded logo
+    const hehe = document.getElementById('image-upload');
+    hehe.addEventListener('change', async (event) => {
+      const selectedFile = event.target.files[0];
+      if (file) {
+        const imageBytes = await util.readFileAsync(file);
+        const selectedNodes = figma.currentPage.selection;
+        if (selectedNodes) {
+          selectedNodes.forEach((node) => {
+            if (node.type === 'RECTANGLE' || node.type === 'ELLIPSE') {
+              node.fills = [{type: 'IMAGE', scaleMode: 'FILL', imageHash: figma.createImage(imageBytes).hash}];
+            }
+          });
+        }
+      }
+    })
+
+
     parent.postMessage({ pluginMessage: { type: 'create-banner-ad', selectedOptions} }, '*');
     }
 </script>
