@@ -1,6 +1,6 @@
 {
-  "name": "BannerAd",
-  "id": "1273558081744451863",
+  "name": "TEST IMPORT LIB",
+  "id": "127355808174445186333",
   "api": "1.0.0",
   "main": "code.js",
   "capabilities": [],
@@ -17,7 +17,8 @@
       "https://static.figma.com",
       "https://cdn.jsdelivr.net",
       "https://rsms.me",
-      "https://fonts.googleapis.com"
+      "https://fonts.googleapis.com",
+      "https://fonts.gstatic.com"
     ]
   }
 }

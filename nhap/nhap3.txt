@@ -46,16 +46,7 @@ async function importNode(checkboxString: string) {
   //       return false;
   //   }
     //const selectedNode = figma.currentPage.selection[0];
-    const imageUrl = "https://cdn.osxdaily.com/wp-content/uploads/2022/10/macOS-Ventura-wallpaper-2.jpg";
-    const nodes = currentPage.findAll(testForKeyWord)
-    for(const node of nodes){
-        node.fills = [{
-          type: "IMAGE",
-          imageHash: figma.createImage(imageUrl).hash,
-          scaleMode: "FIT",
-        }]
-    }
-  
+
   
   
   
