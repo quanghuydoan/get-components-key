@@ -1,6 +1,6 @@
 {
-  "name": "TEST IMPORT LIB",
-  "id": "127355808174445186333",
+  "name": "Get frame keys as JSON",
+  "id": "127355808174445186444",
   "api": "1.0.0",
   "main": "code.js",
   "capabilities": [],
